@@ -2,13 +2,13 @@ import pandas as pd
 import csv
 from pythonping import ping
 
-num_sites = 100000
+num_sites = 1000000
 
 # CSV 파일 경로를 지정하세요
-csv_file_path = '/Users/jane/Downloads/top-1m.csv'
+csv_file_path = 'top-1m.csv'
 
 # 결과를 저장할 CSV 파일
-output_csv_path = '/Users/jane/Downloads/top-1m_result.csv'
+output_csv_path = 'top-1m_result_AUS_sydeny3.csv'
 
 # CSV 파일에서 사이트 목록을 읽기
 sites = pd.read_csv(csv_file_path, header=None)  # 헤더가 없는 경우 header=None을 사용
@@ -19,7 +19,7 @@ with open(output_csv_path, mode='w', newline='') as file:
     writer.writerow(['Site', 'Average Ping (ms)'])
 
     for index, row in sites.iterrows():
-        if 8825 < index:
+        if 765177 < index:
             if index < num_sites:
                 print(index)
                 site_name = row[1]  # 두 번째 열(인덱스 1)의 사이트 이름
